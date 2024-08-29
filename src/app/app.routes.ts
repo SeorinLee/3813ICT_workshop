@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
+import { ProfileComponent } from './profile/profile.component';
 
-export const routes: Routes = [  // export를 통해 routes 변수를 외부로 내보냅니다.
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'account', component: AccountComponent }
+export const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'account', component: AccountComponent },
+  { path: 'profile', component: ProfileComponent }, // 프로필 경로 추가
+  { path: '**', redirectTo: '' }
 ];

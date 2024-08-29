@@ -1,15 +1,32 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container mt-5">
-  <h2 class="text-center">Login</h2>
-  <form (ngSubmit)="login()" class="mt-4">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required placeholder="Enter your email">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-primary text-white text-center py-4">
+            <h3 class="mb-0">Login</h3>
+          </div>
+          <div class="card-body p-4">
+            <form (ngSubmit)="onLogin()">
+              <div class="form-group mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input [(ngModel)]="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter your email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input [(ngModel)]="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="password" placeholder="Enter your password">
+              </div>
+              <div class="form-group form-check mb-4">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group mt-3">
-      <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required placeholder="Enter your password">
-    </div>
-    <button type="submit" class="btn btn-primary btn-block mt-4">Login</button>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
-  </form>
-</div>
+  </div>
+  

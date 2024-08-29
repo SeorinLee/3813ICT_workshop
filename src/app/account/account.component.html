@@ -1,4 +1,27 @@
-<div class="account-page">
-  <h2>Accounts Page</h2>
-  <img src="/kitty.jpg" alt="Account Image" class="account-image" style="width: 150px; height: 150px;">
+<div class="container">
+  <div class="background-container" style="position: relative; text-align: center; color: white;">
+    <!-- 배경 이미지 -->
+    <img src="/public/kitty.jpg" alt="Background Image" style="width: 150px; height: 150px;">
+
+    <!-- 제목 -->
+    <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; font-weight: bold;">
+      Account Page
+    </h1>
+  </div>
+  <div class="container mt-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-secondary text-white">
+          <h2 class="mb-0">Account Details</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Birthdate:</strong> {{ user.birthdate }}</p>
+          <p><strong>Age:</strong> {{ user.age }}</p>
+        </div>
+      </div>
+    </div>
+  <!-- 프로필 페이지로 이동하는 버튼 -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button class="btn btn-primary" (click)="goToProfile()">Go to Profile</button>
+  </div>
 </div>

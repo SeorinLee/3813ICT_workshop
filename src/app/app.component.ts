@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // RouterModule 추가
-import { HttpClientModule } from '@angular/common/http'; // 만약 이곳에서 직접 HttpClient를 사용할 경우
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, HttpClientModule], // RouterModule을 imports에 추가
+  imports: [RouterModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'week4tut';
+
+  get isLoggedIn(): boolean {
+    // 브라우저 환경인지 확인
+    return typeof window !== 'undefined' && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('currentUser') !== null;
+  }
+
+  logout() {
+    if (typeof window !== 'undefined' && typeof sessionStorage !== 'undefined') {
+      sessionStorage.removeItem('currentUser');
+      window.location.reload();
+    }
+  }
 }
