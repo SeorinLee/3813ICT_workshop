@@ -7,7 +7,7 @@
 }
 
 .company__info {
-  background-color: #008080;
+  background-color: green;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .row > h2 {
-  color: #008080;
+  color: green;
 }
 
 .login_form {
@@ -70,7 +70,7 @@ form {
 }
 
 .form__input:focus {
-  border-bottom-color: #008080;
+  border-bottom-color: green;
   box-shadow: 0 0 5px rgba(0, 80, 80, .4);
   border-radius: 4px;
 }
@@ -79,10 +79,10 @@ form {
   transition: all .5s ease;
   width: 70%;
   border-radius: 30px;
-  color: #008080;
+  color: blue;
   font-weight: 600;
   background-color: #fff;
-  border: 1px solid #008080;
+  border: 1px solid blue;
   margin-top: 1.5em;
   margin-bottom: 1em;
 }
